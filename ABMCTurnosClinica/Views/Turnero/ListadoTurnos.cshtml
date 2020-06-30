@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "ListadoTurnos";
+}
+@model List<ABMCTurnosClinica.Models.DTOListadoTurnos>
+
+<h2>ListadoTurnos</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Nro turno</th>
+        <th>Nombre Paciente</th>
+        <th>Edad</th>
+        <th>Fecha del turno</th>
+        <th>Especialidad</th>
+        <th>Acciones</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.NombrePaciente</td>
+            <td>@item.Edad</td>
+            <td>@item.Fecha</td>
+            <td>@item.Descripcion</td>
+            <td>
+                <a href="/Lavado/Edicion?idLavado=@item.Id" class="btn btn-success">Editar</a>
+                <a href="/Lavado/Eliminar?idLavado=@item.Id" class="btn btn-warning">Eliminar</a>
+            </td>
+        </tr>
+    }
+</table>

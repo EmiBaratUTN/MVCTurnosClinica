@@ -1,0 +1,30 @@
+﻿@model ABMCTurnosClinica.Models.VMReporte
+@{
+    ViewBag.Title = "Reportes";
+}
+
+<h2>Reportes</h2>
+
+<p>Monto total abonado por pacientes de 18 a 40 años: @Model.MontoPacientes18a40</p>
+<br />
+
+<h4>Cantidad de Prestaciones por tipo de este año</h4>
+<table class="table table-striped">
+    <tr>
+        <th>Especialidad</th>
+
+        <th>Cantidad</th>
+
+
+
+    </tr>
+
+    @foreach (var item in Model.cantPorPrestacion)
+    {
+        <tr>
+            <td>@item.Descripcion</td>
+            <td>@item.Cantidad</td>
+        </tr>
+    }
+
+</table>
